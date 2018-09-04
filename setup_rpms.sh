@@ -56,28 +56,19 @@ rm -Rf IPERF*
 rm -f ${netperf}.tar.gz
 rm -Rf netperf*
 
-mkdir -P /root/dpdkrpms/1705 /root/dpdkrpms/1611-2 /root/tuned/28 /root/tuned/27 /root/dpdkrpms/1711 /root/dpdkrpms/1611-4 /root/dpdkrpms/1711-8 /root/dpdkrpms/1711-9 /root/dpdkrpms/1711-13
+SYS_ARCH=$(uname -m)
 SERVER="download-node-02.eng.bos.redhat.com"
+mkdir -P /root/tuned/28 /root/tuned/27 /root/dpdkrpms/1711-9 /root/dpdkrpms/1711-13
 wget http://$SERVER/brewroot/packages/tuned/2.7.1/5.el7fdb/noarch/tuned-2.7.1-5.el7fdb.noarch.rpm -P /root/tuned/27/.
 wget http://$SERVER/brewroot/packages/tuned/2.7.1/5.el7fdb/noarch/tuned-profiles-cpu-partitioning-2.7.1-5.el7fdb.noarch.rpm -P /root/tuned/27/.
 wget http://$SERVER/brewroot/packages/tuned/2.7.1/5.el7fdb/noarch/tuned-profiles-nfv-2.7.1-5.el7fdb.noarch.rpm -P /root/tuned/27/.
 wget http://$SERVER/brewroot/packages/tuned/2.7.1/5.el7fdb/noarch/tuned-profiles-realtime-2.7.1-5.el7fdb.noarch.rpm -P /root/tuned/27/.
 wget http://$SERVER/brewroot/packages/tuned/2.8.0/2.el7fdp/noarch/tuned-2.8.0-2.el7fdp.noarch.rpm -P /root/tuned/28/.
 wget http://$SERVER/brewroot/packages/tuned/2.8.0/2.el7fdp/noarch/tuned-profiles-cpu-partitioning-2.8.0-2.el7fdp.noarch.rpm -P /root/tuned/28/.
-wget http://$SERVER/brewroot/packages/dpdk/17.05/2.el7fdb/x86_64/dpdk-17.05-2.el7fdb.x86_64.rpm -P /root/dpdkrpms/1705/.
-wget http://$SERVER/brewroot/packages/dpdk/17.05/2.el7fdb/x86_64/dpdk-tools-17.05-2.el7fdb.x86_64.rpm -P /root/dpdkrpms/1705/.
-wget http://$SERVER/brewroot/packages/dpdk/16.11.2/4.el7/x86_64/dpdk-16.11.2-4.el7.x86_64.rpm -P /root/dpdkrpms/1611-2/.
-wget http://$SERVER/brewroot/packages/dpdk/16.11.2/4.el7/x86_64/dpdk-tools-16.11.2-4.el7.x86_64.rpm -P /root/dpdkrpms/1611-2/.
-wget http://$SERVER/brewroot/packages/dpdk/17.11/7.el7/x86_64/dpdk-17.11-7.el7.x86_64.rpm -P /root/dpdkrpms/1711/.
-wget http://$SERVER/brewroot/packages/dpdk/17.11/7.el7/x86_64/dpdk-tools-17.11-7.el7.x86_64.rpm -P /root/dpdkrpms/1711/.
-wget http://$SERVER/brewroot/packages/dpdk/17.11/9.el7fdb/x86_64/dpdk-17.11-9.el7fdb.x86_64.rpm -P /root/dpdkrpms/1711-9/.
-wget http://$SERVER/brewroot/packages/dpdk/17.11/9.el7fdb/x86_64/dpdk-tools-17.11-9.el7fdb.x86_64.rpm -P /root/dpdkrpms/1711-9/.
-wget http://$SERVER/brewroot/packages/dpdk/16.11/4.el7fdp/x86_64/dpdk-16.11-4.el7fdp.x86_64.rpm -P /root/dpdkrpms/1611-4/.
-wget http://$SERVER/brewroot/packages/dpdk/16.11/4.el7fdp/x86_64/dpdk-tools-16.11-4.el7fdp.x86_64.rpm -P /root/dpdkrpms/1611-4/.
-wget http://$SERVER/brewroot/packages/dpdk/17.11/8.el7fdb/x86_64/dpdk-17.11-8.el7fdb.x86_64.rpm -P /root/dpdkrpms/1711-8/.
-wget http://$SERVER/brewroot/packages/dpdk/17.11/8.el7fdb/x86_64/dpdk-tools-17.11-8.el7fdb.x86_64.rpm -P /root/dpdkrpms/1711-8/.
-wget http://$SERVER/brewroot/packages/dpdk/17.11/13.el7/x86_64/dpdk-17.11-13.el7.x86_64.rpm -P /root/dpdkrpms/1711-13/.
-wget http://$SERVER/brewroot/packages/dpdk/17.11/13.el7/x86_64/dpdk-tools-17.11-13.el7.x86_64.rpm -P /root/dpdkrpms/1711-13/.
+wget http://$SERVER/brewroot/packages/dpdk/17.11/9.el7fdb/$SYS_ARCH/dpdk-17.11-9.el7fdb.$SYS_ARCH.rpm /root/dpdkrpms/1711-9/
+wget http://$SERVER/brewroot/packages/dpdk/17.11/9.el7fdb/$SYS_ARCH/dpdk-tools-17.11-9.el7fdb.$SYS_ARCH.rpm /root/dpdkrpms/1711-9/
+wget http://$SERVER/brewroot/packages/dpdk/17.11/13.el7/$SYS_ARCH/dpdk-17.11-9.el7fdb.$SYS_ARCH.rpm /root/dpdkrpms/1711-13/
+wget http://$SERVER/brewroot/packages/dpdk/17.11/13.el7/$SYS_ARCH/dpdk-tools-17.11-9.el7fdb.$SYS_ARCH.rpm /root/dpdkrpms/1711-13/
 
 if [ "$DPDK_BUILD" == "YES" ]
 then
@@ -88,7 +79,7 @@ then
     git clone git://dpdk.org/dpdk
     cd dpdk
     git checkout $DPDK_VER
-    export RTE_TARGET=x86_64-native-linuxapp-gcc
+    export RTE_TARGET=$SYS_ARCH-native-linuxapp-gcc
     make install T=$RTE_TARGET
     cd ..
 fi
