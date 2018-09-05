@@ -58,7 +58,7 @@ rm -Rf netperf*
 
 SYS_ARCH=$(uname -m)
 SERVER="download-node-02.eng.bos.redhat.com"
-mkdir -P /root/tuned/28 /root/tuned/27 /root/dpdkrpms/1711-9 /root/dpdkrpms/1711-13
+mkdir -p /root/tuned/28 /root/tuned/27 /root/dpdkrpms/1711-9 /root/dpdkrpms/1711-13
 wget http://$SERVER/brewroot/packages/tuned/2.7.1/5.el7fdb/noarch/tuned-2.7.1-5.el7fdb.noarch.rpm -P /root/tuned/27/.
 wget http://$SERVER/brewroot/packages/tuned/2.7.1/5.el7fdb/noarch/tuned-profiles-cpu-partitioning-2.7.1-5.el7fdb.noarch.rpm -P /root/tuned/27/.
 wget http://$SERVER/brewroot/packages/tuned/2.7.1/5.el7fdb/noarch/tuned-profiles-nfv-2.7.1-5.el7fdb.noarch.rpm -P /root/tuned/27/.
