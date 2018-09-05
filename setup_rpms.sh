@@ -65,10 +65,10 @@ wget http://$SERVER/brewroot/packages/tuned/2.7.1/5.el7fdb/noarch/tuned-profiles
 wget http://$SERVER/brewroot/packages/tuned/2.7.1/5.el7fdb/noarch/tuned-profiles-realtime-2.7.1-5.el7fdb.noarch.rpm -P /root/tuned/27/.
 wget http://$SERVER/brewroot/packages/tuned/2.8.0/2.el7fdp/noarch/tuned-2.8.0-2.el7fdp.noarch.rpm -P /root/tuned/28/.
 wget http://$SERVER/brewroot/packages/tuned/2.8.0/2.el7fdp/noarch/tuned-profiles-cpu-partitioning-2.8.0-2.el7fdp.noarch.rpm -P /root/tuned/28/.
-wget http://$SERVER/brewroot/packages/dpdk/17.11/9.el7fdb/$SYS_ARCH/dpdk-17.11-9.el7fdb.$SYS_ARCH.rpm /root/dpdkrpms/1711-9/
-wget http://$SERVER/brewroot/packages/dpdk/17.11/9.el7fdb/$SYS_ARCH/dpdk-tools-17.11-9.el7fdb.$SYS_ARCH.rpm /root/dpdkrpms/1711-9/
-wget http://$SERVER/brewroot/packages/dpdk/17.11/13.el7/$SYS_ARCH/dpdk-17.11-9.el7fdb.$SYS_ARCH.rpm /root/dpdkrpms/1711-13/
-wget http://$SERVER/brewroot/packages/dpdk/17.11/13.el7/$SYS_ARCH/dpdk-tools-17.11-9.el7fdb.$SYS_ARCH.rpm /root/dpdkrpms/1711-13/
+wget http://$SERVER/brewroot/packages/dpdk/17.11/9.el7fdb/$SYS_ARCH/dpdk-17.11-9.el7fdb.$SYS_ARCH.rpm -P /root/dpdkrpms/1711-9/
+wget http://$SERVER/brewroot/packages/dpdk/17.11/9.el7fdb/$SYS_ARCH/dpdk-tools-17.11-9.el7fdb.$SYS_ARCH.rpm -P /root/dpdkrpms/1711-9/
+wget http://$SERVER/brewroot/packages/dpdk/17.11/13.el7/$SYS_ARCH/dpdk-17.11-13.el7.$SYS_ARCH.rpm -P /root/dpdkrpms/1711-13/
+wget http://$SERVER/brewroot/packages/dpdk/17.11/13.el7/$SYS_ARCH/dpdk-tools-17.11-13.el7.$SYS_ARCH.rpm -P /root/dpdkrpms/1711-13/
 
 if [ "$DPDK_BUILD" == "YES" ]
 then
