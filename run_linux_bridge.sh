@@ -15,8 +15,8 @@ brctl addif br0 eth2
 ip addr add 1.1.1.5/16 dev br0
 ip link set dev br0 up
 
-arp -s 1.1.1.10 04:F4:BC:2F:C8:C1
-arp -s 1.1.2.10 04:F4:BC:2F:C8:C0
+arp -s 1.1.1.1 90:e2:ba:f2:07:f8
+arp -s 1.1.1.2 90:e2:ba:f2:07:f9
 
 sysctl -w net.ipv4.ip_forward=1
 
