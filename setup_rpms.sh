@@ -33,7 +33,7 @@ yum install -y nmap-ncat tcpdump
 # netperf & iperf
 yum install -y gcc-c++ make gcc
 
-netperf=netperf-2.6.0
+netperf=netperf-2.7.0
 wget http://lacrosse.corp.redhat.com/~haliu/${netperf}.tar.gz -O /tmp/${netperf}.tar.gz
 tar zxvf /tmp/${netperf}.tar.gz
 pushd ${netperf}
@@ -42,7 +42,7 @@ sed -i "/ppc64/i\ppc64le:Linux:*:*)\n\ echo powerpc64le-unknown-linux-gnu\n\ exi
 ./configure && make && make install
 popd
 
-IPERF_FILE="iperf-2.0.5.tar.gz"
+IPERF_FILE="iperf-2.0.10.tar.gz"
 wget http://lacrosse.corp.redhat.com/~haliu/${IPERF_FILE}
 tar xf ${IPERF_FILE}
 BUILD_DIR="${IPERF_FILE%.tar.gz}"
