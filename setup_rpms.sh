@@ -73,8 +73,8 @@ wget http://$SERVER/brewroot/packages/dpdk/17.11/13.el7/$SYS_ARCH/dpdk-17.11-13.
 wget http://$SERVER/brewroot/packages/dpdk/17.11/13.el7/$SYS_ARCH/dpdk-tools-17.11-13.el7.$SYS_ARCH.rpm -P /root/dpdkrpms/1711-13/
 wget http://$SERVER/brewroot/packages/dpdk/17.11/13.el8/$SYS_ARCH/dpdk-17.11-13.el8.ppc64le.rpm -P /root/dpdkrpms/1711-13/
 wget http://$SERVER/brewroot/packages/dpdk/17.11/13.el8/$SYS_ARCH/dpdk-tools-17.11-13.el8.ppc64le.rpm -P /root/dpdkrpms/1711-13/
-wget http://$SERVER/brewroot/packages/dpdk/17.11/14.el8/$SYS_ARCH/dpdk-17.11-14.el7.ppc64le.rpm -P /root/dpdkrpms/1711-14/
-wget http://$SERVER/brewroot/packages/dpdk/17.11/14.el8/$SYS_ARCH/dpdk-tools-17.11-14.el7.ppc64le.rpm -P /root/dpdkrpms/1711-14/
+wget http://$SERVER/brewroot/packages/dpdk/17.11/14.el7/$SYS_ARCH/dpdk-17.11-14.el7.ppc64le.rpm -P /root/dpdkrpms/1711-14/
+wget http://$SERVER/brewroot/packages/dpdk/17.11/14.el7/$SYS_ARCH/dpdk-tools-17.11-14.el7.ppc64le.rpm -P /root/dpdkrpms/1711-14/
 wget http://$SERVER/brewroot/packages/dpdk/17.11/14.el8/$SYS_ARCH/dpdk-17.11-14.el8.ppc64le.rpm -P /root/dpdkrpms/1711-14/
 wget http://$SERVER/brewroot/packages/dpdk/17.11/14.el8/$SYS_ARCH/dpdk-tools-17.11-14.el8.ppc64le.rpm -P /root/dpdkrpms/1711-14/
 if [ "$DPDK_BUILD" == "YES" ]
