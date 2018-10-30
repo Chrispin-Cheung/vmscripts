@@ -58,7 +58,7 @@ rm -Rf netperf*
 
 SYS_ARCH=$(uname -m)
 SERVER="download-node-02.eng.bos.redhat.com"
-mkdir -p /root/tuned/28 /root/tuned/27 /root/dpdkrpms/1711-9 /root/dpdkrpms/1711-10 /root/dpdkrpms/1711-13
+mkdir -p /root/tuned/28 /root/tuned/27 /root/dpdkrpms/1711-9 /root/dpdkrpms/1711-10 /root/dpdkrpms/1711-13 /root/dpdkrpms/1711-14
 wget http://$SERVER/brewroot/packages/tuned/2.7.1/5.el7fdb/noarch/tuned-2.7.1-5.el7fdb.noarch.rpm -P /root/tuned/27/.
 wget http://$SERVER/brewroot/packages/tuned/2.7.1/5.el7fdb/noarch/tuned-profiles-cpu-partitioning-2.7.1-5.el7fdb.noarch.rpm -P /root/tuned/27/.
 wget http://$SERVER/brewroot/packages/tuned/2.7.1/5.el7fdb/noarch/tuned-profiles-nfv-2.7.1-5.el7fdb.noarch.rpm -P /root/tuned/27/.
@@ -71,7 +71,12 @@ wget http://$SERVER/brewroot/packages/dpdk/17.11/10.el7fdb/$SYS_ARCH/dpdk-17.11-
 wget http://$SERVER/brewroot/packages/dpdk/17.11/10.el7fdb/$SYS_ARCH/dpdk-tools-17.11-10.el7fdb.$SYS_ARCH.rpm -P /root/dpdkrpms/1711-10/
 wget http://$SERVER/brewroot/packages/dpdk/17.11/13.el7/$SYS_ARCH/dpdk-17.11-13.el7.$SYS_ARCH.rpm -P /root/dpdkrpms/1711-13/
 wget http://$SERVER/brewroot/packages/dpdk/17.11/13.el7/$SYS_ARCH/dpdk-tools-17.11-13.el7.$SYS_ARCH.rpm -P /root/dpdkrpms/1711-13/
-
+wget http://$SERVER/brewroot/packages/dpdk/17.11/13.el8/$SYS_ARCH/dpdk-17.11-13.el8.ppc64le.rpm -P /root/dpdkrpms/1711-13/
+wget http://$SERVER/brewroot/packages/dpdk/17.11/13.el8/$SYS_ARCH/dpdk-tools-17.11-13.el8.ppc64le.rpm -P /root/dpdkrpms/1711-13/
+wget http://$SERVER/brewroot/packages/dpdk/17.11/14.el8/$SYS_ARCH/dpdk-17.11-14.el7.ppc64le.rpm -P /root/dpdkrpms/1711-14/
+wget http://$SERVER/brewroot/packages/dpdk/17.11/14.el8/$SYS_ARCH/dpdk-tools-17.11-14.el7.ppc64le.rpm -P /root/dpdkrpms/1711-14/
+wget http://$SERVER/brewroot/packages/dpdk/17.11/14.el8/$SYS_ARCH/dpdk-17.11-14.el8.ppc64le.rpm -P /root/dpdkrpms/1711-14/
+wget http://$SERVER/brewroot/packages/dpdk/17.11/14.el8/$SYS_ARCH/dpdk-tools-17.11-14.el8.ppc64le.rpm -P /root/dpdkrpms/1711-14/
 if [ "$DPDK_BUILD" == "YES" ]
 then
     # install upstream dpdk version
